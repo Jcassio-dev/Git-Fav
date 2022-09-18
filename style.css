@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}  
+:root{
+    font-size: 62.5%;
+
+    --bg-primary: #000;
+    --bg-th: #093816;
+    --bg-odd: hsla(123, 61%, 6%, 0.5);
+    --bg-even: #061c09;
+    ;
+    --bg-tbody-nofav: #020d05;
+    --bg-bt: #026b3e;
+
+
+    --tb-stroke: #24620b;
+
+    --fc-primary: #E1E1E6;
+    --fc-input:  #9fafa3;
+    --fc-secondary: #4E5455;
+    --fc-btn-remove:  #F75A68;
+
+    --ff-primary: 'Roboto', sans-serif;
+    --ff-secondary:'Roboto Mono', monospace;
+
+    --fs-tbody-nofav: 4rem;
+    --fs-button: 1.4rem;
+    --fs-input: 1.6rem;
+    --fs-primary: 2rem;
+
+
+    
+
+} 
+
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+
+    font-size: var(--fs-primary);
+
+    background: var(--bg-primary);
+}
+body *{
+    font-family: var(--ff-primary);
+}
+
+#app{
+    width: clamp(40rem, 80rem + 15vw, 112rem);
+    margin: 0 auto;
+    padding: 1rem;
+}
+button{
+    background: none;
+
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 6.7rem 0;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+.search input, button{
+    border: none;
+    border-radius: .5rem;
+}
+.search input{
+    width: clamp(20rem, 15rem + 15vw, 46.2rem);
+    padding: 1.6rem;
+
+    background-color: var(--bg-odd);
+
+    color: var(--fc-input);
+    transition: 200ms;
+}
+
+input:focus{
+    outline: 0;
+}
+
+.search button{
+    display: flex;
+    place-content: center;
+    gap: .8rem;
+
+    padding: 1.2rem 3.2rem;
+
+    background: var(--bg-bt);
+
+
+    color: #FFFFFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: var(--fs-button);
+    line-height: 2.4rem;
+
+    cursor: pointer;
+
+    transition: 200ms;
+
+}
+
+.search button:hover {
+    background-color: #FFFFFF;
+    color: var(--bg-bt);
+}
+
+.search button:hover svg path{
+    fill: var(--bg-bt);
+}
+
+.border{
+        border-radius: 1.2rem;
+        border: 1px solid var(--tb-stroke);
+        overflow: hidden;
+}
+table{
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table *{
+    font-weight: 700;
+    color: var(--fc-primary);
+}
+
+table th{
+    background-color: var(--bg-th);
+    padding: 1.6rem 4rem;
+    text-align: left;
+
+}
+table th:first-child{
+    border-top-left-radius: 1.2rem;
+    
+}
+table th:last-child{
+    border-top-right-radius: 1.2rem;
+}
+
+
+.noFav td{
+    padding: 18rem 10rem;
+
+    background-color: var(--bg-tbody-nofav);
+
+    transition: 200ms;
+}
+.noFav .noFav-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 5rem;
+
+    flex-wrap: nowrap;
+   
+}
+.noFav .noFav-wrapper p{
+    font-size: var(--fs-tbody-nofav);
+    font-family: var(--ff-secondary);
+    font-weight: 700;
+    line-height: 4rem;
+
+    color: var(--fc-secondary);
+}
+.fav tr{
+    border-bottom: 1px solid var(--tb-stroke);
+}
+
+.fav td{
+    text-align: start;
+    line-height: 160%;
+    padding: 2.4rem 4rem;
+}
+
+
+.fav tr:nth-child(even){
+    background: var(--bg-even);
+}
+.fav tr:nth-child(odd){
+    background: var(--bg-odd);
+}
+
+td.user {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+td.user img{
+    width: 5.6rem;
+    height: 5.6rem;
+
+    border-radius: 50%;
+}
+
+ a{
+    text-decoration: none;
+}
+
+td .user span {
+    font-weight: 400;
+
+}
+
+
+.fav td button{
+    cursor: pointer;
+
+    transition: 200ms;
+    
+}
+td .remove{
+    font-size: var(--ff-primary);
+    color: var(--fc-btn-remove);
+
+}
+
+td button:hover{
+    transform: scale(1.1);
+}
+
+
