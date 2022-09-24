@@ -1,4 +1,4 @@
-import { Favorites } from "./Favorites.js.js"
+import { Favorites } from "./Favorites.js"
 
 export class FavoritesView extends Favorites {
     constructor(root){
